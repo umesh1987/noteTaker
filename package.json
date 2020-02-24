@@ -1,17 +1,15 @@
 {
-  "name": "noteTaker",
+  "name": "note-taker",
   "version": "1.0.0",
-  "description": "Create an application that can be used to write, save, and delete notes. This application will use an express backend and save and retrieve note data from a JSON file.",
-  "main": "server.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
-    "module": "^1.2.5"
+    "express": "^4.16.4",
+    "mysql": "^2.16.0"
   }
 }
