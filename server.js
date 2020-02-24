@@ -11,7 +11,7 @@ var PORT = process.env.PORT || 8080;
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use('/public', express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/public"));
 
 const fs = require("fs");
 const util = require("util");
@@ -46,6 +46,7 @@ app.post("/api/notes", function(req, res) {
     notes.push(req.body)
     writeFileAsync("./db/db.json", JSON.stringify(notes))
     console.log("Added new notes!")
+    res.json(notes);
 });
 
 app.delete('/api/notes/:id', function(req, res) {
@@ -64,6 +65,7 @@ app.delete('/api/notes/:id', function(req, res) {
     notes.splice(loc, 1)
 
     writeFileAsync("./db/db.json", JSON.stringify(notes))
+    res.json(notes);
 
 });
 
